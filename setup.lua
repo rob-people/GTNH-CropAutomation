@@ -20,7 +20,7 @@ local scripts = {
 if #args >= 1 then
     branch = args[1]
 else
-    branch = 'main'
+    branch = 'test'
 end
 
 -- REPO
