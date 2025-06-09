@@ -61,7 +61,7 @@ local config = {
     storageStopSlot = -3,
 
     repoUrl = 'https://raw.githubusercontent.com/rob-people/GTNH-CropAutomation/refs/heads/',
-    repoBranch = 'test'
+    repoBranch = 'feature/infinispread'
 }
 
 config.workingFarmArea = config.workingFarmSize^2

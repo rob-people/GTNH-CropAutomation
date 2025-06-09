@@ -147,9 +147,7 @@ local function saveSeeds()
     inventory_controller.equip()
     robot.useDown()
 
-    if config.keepDrops then
-        robot.suckDown()
-    end
+    robot.suckDown()
 
     gps.save()
     saveInventory()
