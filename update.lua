@@ -11,7 +11,8 @@ local scripts = {
     'autoTier.lua',
     'autoSpread.lua',
     'infiniSpread.lua',
-    'uninstall.lua'
+    'uninstall.lua',
+    'update.lua'
 }
 
 -- UNINSTALL
@@ -27,5 +28,5 @@ print('Removed current installation, downloading latest version')
 shell.execute(string.format('wget %s%s/setup.lua && setup', config.repoUrl, config.branch))
 print('Restoring config')
 shell.execute("mv config.lua config_default.lua")
-shell.execute("mv config_temp.lua connfig.lua")
+shell.execute("mv config_temp.lua config.lua")
 print(string.format('Updated to latest version of branch %s', config.branch))
