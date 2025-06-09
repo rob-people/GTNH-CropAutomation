@@ -13,6 +13,7 @@ local scripts = {
     'autoTier.lua',
     'autoSpread.lua',
     'infiniSpread.lua',
+    'update.lua',
     'uninstall.lua'
 }
 
@@ -20,7 +21,7 @@ local scripts = {
 if #args >= 1 then
     branch = args[1]
 else
-    branch = 'test'
+    branch = 'feature/infinispread'
 end
 
 -- REPO
