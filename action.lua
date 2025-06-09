@@ -52,6 +52,26 @@ end
 
 local function dumpInventory()
     local selectedSlot = robot.select()
+    gps.go(config.dumpPos)
+
+    for i=1, (robot.inventorySize() + config.storageStopSlot) do
+        os.sleep(0)
+        if robot.count(i) > 0 then
+            robot.select(i)
+            for e=1, inventory_controller.getInventorySize(sides.down) do
+                if inventory_controller.getStackInSlot(sides.down, e) == nil then
+                    inventory_controller.dropIntoSlot(sides.down, e)
+                    break
+                end
+            end
+        end
+    end
+
+    robot.select(selectedSlot)
+end
+
+local function saveInventory()
+    local selectedSlot = robot.select()
     gps.go(config.storagePos)
 
     for i=1, (robot.inventorySize() + config.storageStopSlot) do
@@ -112,6 +132,28 @@ local function deweed()
     if config.keepDrops then
         robot.suckDown()
     end
+
+    inventory_controller.equip()
+    robot.select(selectedSlot)
+end
+
+local function saveSeeds()
+    local selectedSlot = robot.select()
+    gps.save()
+    dumpInventory()
+    gps.resume()
+
+    robot.select(robot.inventorySize() + config.spadeSlot)
+    inventory_controller.equip()
+    robot.useDown()
+
+    if config.keepDrops then
+        robot.suckDown()
+    end
+
+    gps.save()
+    saveInventory()
+    gps.resume()
 
     inventory_controller.equip()
     robot.select(selectedSlot)

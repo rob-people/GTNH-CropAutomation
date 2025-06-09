@@ -44,7 +44,7 @@ local function checkChild(slot, crop)
 
             -- No parent is empty, put in storage
             elseif stat >= config.autoSpreadThreshold then
-                action.deweed() -- "deweed" here just means harvesting with a spade to put seeds in storage
+                action.saveSeeds() -- "deweed" here just means harvesting with a spade to put seeds in storage
 
             -- Stats are not high enough
             else

@@ -42,8 +42,10 @@ local config = {
     chargerPos = {0, 0},
     -- The coordinate for the container contains crop sticks
     stickContainerPos = {-1, 0},
-    -- The coordinate for the container to store seeds, products, etc
-    storagePos = {-2, 0},
+    -- The coordinate for the container to dump seeds, products, etc
+    dumpPos = {-2, 0},
+    -- The coordinate for the container to save seeds, products, etc
+    storagePos = {-2, -1},
     -- The coordinate for the farmland that the dislocator is facing
     relayFarmlandPos = {1, 1},
     -- The coordinate for the transvector dislocator
