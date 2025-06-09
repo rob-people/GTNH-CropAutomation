@@ -56,7 +56,10 @@ local config = {
     -- The slot for crop sticks
     stickSlot = -2,
     -- The slot which the robot will stop storing items
-    storageStopSlot = -3
+    storageStopSlot = -3,
+
+    repoUrl = 'https://raw.githubusercontent.com/rob-people/GTNH-CropAutomation/refs/heads/',
+    repoBranch = 'test'
 }
 
 config.workingFarmArea = config.workingFarmSize^2
